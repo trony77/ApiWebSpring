@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomePageController {
     @RequestMapping(value = "/p")
     public String product(Model model) {
-        model.addAttribute("Hello Mister DD","product");
-        return "home";
+        model.addAttribute("title","<h1>DD school</h1>");
+        model.addAttribute("product","<h1>Hello Mister DD</h1>");
+        return "home.html";
     }
 }

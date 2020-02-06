@@ -3,6 +3,7 @@ package org.trony.training.configuration;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
@@ -62,7 +63,7 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware {
         return resolver;
     }
 
-
+    @Bean
     public ViewResolver htmlViewResolver() {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine(htmlTemplateResolver()));
@@ -72,6 +73,7 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware {
         return resolver;
     }
 
+    @Bean
     public ViewResolver cssVewResolver() {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine(cssTemplateResolver()));
@@ -81,6 +83,7 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware {
         return resolver;
     }
 
+    @Bean
     public ViewResolver jsVewResolver() {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine(jsTemplateResolver()));
